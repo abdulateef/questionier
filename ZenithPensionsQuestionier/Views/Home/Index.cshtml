@@ -1,0 +1,273 @@
+﻿@model IEnumerable<ZenithPensionsQuestionier.Models.Question>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3 style="text-align:center">PLEAS KINDLY ATTEMPT THE SURVEY QUESTIONS BELOW</h3>
+        <form asp-controller="Home" asp-action="Index" methos="post">
+            @foreach (var item in Model)
+            {
+                @if (item.Type == "A")
+                {
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">(@item.Id) @item.Text.ToUpper()</h6>
+                            <div class="form-row">
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionA" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionA">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionB" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionB">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionC" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionC">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionD" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionD">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionE" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionE">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <br />
+                }
+
+                @if (item.Type == "B")
+                {
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">(@item.Id) @item.Text.ToUpper()</h6>
+
+                            <div class="form-group">
+
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="@item.Id"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br />
+                }
+
+
+                @if (item.Type == "E")
+                {
+
+
+                    <small style="text-align:center"><em>@item.Instruction</em></small>
+
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">(@item.Id) @item.Text.ToUpper()</h6>
+                            <div class="form-row">
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionA" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionA">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionB" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionB">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionC" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionC">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionD" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionD">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionE" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionE">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionF" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionF">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionG" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionG">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <br />
+                }
+
+
+
+                @if (item.Type == "C")
+                {
+
+
+                    <small style="text-align:center"><em>@item.Instruction</em></small>
+
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">(@item.Id) @item.Text.ToUpper()</h6>
+                            <div class="form-row">
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionA" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionA">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionB" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionB">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionC" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionC">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionD" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionD">
+                                </div>
+
+                              
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <br />
+                }
+
+
+                @if (item.Type == "D")
+                {
+
+
+                    <small style="text-align:center"><em>@item.Instruction</em></small>
+
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">(@item.Id) @item.Text.ToUpper()</h6>
+                            <div class="form-row">
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionA" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionA">
+                                </div>
+
+                                <div class="input-group col-md-6 mt-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Radio button for following text input" name="@item.Id" value="@item.OptionB" required>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with radio button" disabled="disabled" value="@item.OptionB">
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <br />
+                }
+
+            }
+
+            <div class="form-group col-md-10 offset-6 mt-2">
+              
+                        <input type="submit" class="btn btn-primary" value="Submit">
+              
+            </div>
+        </form>
+    </div>
+</div>

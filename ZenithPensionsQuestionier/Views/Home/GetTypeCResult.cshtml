@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ZenithPensionsQuestionier.Models.QuestionAnswerCountVm>
+@{
+    ViewData["Title"] = "GetResult";
+}
+
+<h3>TYPE C</h3>
+
+<div class="row">
+    <div class="col-12">
+
+        @foreach (var item in Model)
+        {
+            @if (item.Type == "C")
+            {
+
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted"> @item.Text.ToUpper()</h6>
+                        <div class="form-row">
+
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Answers</th>
+                                        <th>Numbers of times choosen</th>
+                                        <th>Percentage(%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>@item.OptionA</td>
+                                        <td>@item.OptionACount</td>
+                                        <td>
+
+
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: @item.OptionACountperc;" aria-valuemin="0" aria-valuemax="100">@item.OptionACountperc</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>@item.OptionB</td>
+                                        <td>@item.OptionBCount</td>
+                                        <td>
+
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width:  @item.OptionBCountperc;" aria-valuemin="0" aria-valuemax="100">@item.OptionBCountperc</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>@item.OptionC</td>
+                                        <td>@item.OptionCCount</td>
+                                        <td>
+
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width:@item.OptionCCountperc;" aria-valuemin="0" aria-valuemax="100">@item.OptionCCountperc</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>@item.OptionD</td>
+                                        <td>@item.OptionDCount</td>
+                                        <td>
+
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width:  @item.OptionDCountperc ;" aria-valuemin="0" aria-valuemax="100">@item.OptionDCountperc</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                   
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+                <br />
+
+            }
+
+        }
+
+
+
+    </div>
+</div>
+
